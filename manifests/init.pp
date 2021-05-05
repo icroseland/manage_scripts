@@ -6,7 +6,7 @@
 # @example
 #   include manage_scripts
 class manage_scripts(
-  $file_array = undef
+  $file_array
 ){
 File {
   owner => 'root',
