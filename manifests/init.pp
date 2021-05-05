@@ -13,7 +13,7 @@ File {
   group => 'root',
   mode  => '0755'
   }
-
+notify {'running manage_scripts':}
 $files_array.each |String $scripts|{
 notify {"array value  ${scripts}  defined":}
 }
