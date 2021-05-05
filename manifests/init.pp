@@ -14,13 +14,10 @@ File {
   mode  => '0755'
   }
 
-notify {'running manage_scripts':}
 $file_array.each |String $scripts|{
-notify {"array value  ${scripts}  defined":}
-}
-#file { $scripts:
-#  ensure => 'file',
-#  source => "puppet:///modules/manage_scripts${scripts}"
-#  }
-# }
+file { $scripts:
+  ensure => 'file',
+  source => "puppet:///modules/manage_scripts${scripts}"
+  }
+ }
 }
