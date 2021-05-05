@@ -13,10 +13,13 @@ File {
   group => 'root',
   mode  => '0755'
   }
+
 $files_array.each |String $scripts|{
-file { $scripts:
-  ensure => 'file',
-  source => "puppet:///modules/manage_scripts${scripts}"
-  }
- }
+notify {"array value  ${scripts}  defined":}
+}
+#file { $scripts:
+#  ensure => 'file',
+#  source => "puppet:///modules/manage_scripts${scripts}"
+#  }
+# }
 }
