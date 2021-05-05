@@ -6,7 +6,7 @@
 # @example
 #   include manage_scripts
 class manage_scripts(
-  Array $files_array
+  Array $file_array
 ){
 File {
   owner => 'root',
@@ -15,7 +15,7 @@ File {
   }
 
 notify {'running manage_scripts':}
-$files_array.each |String $scripts|{
+$file_array.each |String $scripts|{
 notify {"array value  ${scripts}  defined":}
 }
 #file { $scripts:
